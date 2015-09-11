@@ -6,8 +6,8 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import sample.address.model.Person;
@@ -87,7 +87,7 @@ public class MainApp extends Application
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
-            AnchorPane personOverview = loader.load();
+            Node personOverview = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(personOverview);

@@ -1,11 +1,12 @@
 package sample.address.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.address.MainApp;
-import sample.address.model.DateUtil;
+import sample.address.util.DateUtil;
 import sample.address.model.Person;
 
 
@@ -108,6 +109,20 @@ public class PersonOverviewController
     private void handleDeletePerson()
     {
         int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
-        personTable.getItems().remove(selectedIndex);
+        if (selectedIndex >= 0)
+        {
+            personTable.getItems().remove(selectedIndex);
+        }
+        else
+        {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Person Selected");
+            alert.setContentText("Please select a person in the table.");
+
+            alert.showAndWait();
+        }
     }
 }
