@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.35" prefHeight="480.0" prefWidth="640.0" stylesheets="@rokdoc_classic.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.address.view.PersonOverviewController">
+<SplitPane dividerPositions="0.35" prefHeight="480.0" prefWidth="640.0" stylesheets="@rokdoc_classic.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.address.view.PersonOverviewController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -40,7 +40,7 @@
          <children>
             <BorderPane layoutX="95.0" layoutY="70.0" prefHeight="298.0" prefWidth="414.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
-                  <Label styleClass="header-label" text="Person Details" BorderPane.alignment="CENTER_LEFT" />
+                  <Label styleClass="ikon-label-header" text="Person Details" BorderPane.alignment="CENTER_LEFT" />
                </top>
                <center>
                   <VBox BorderPane.alignment="TOP_CENTER">
@@ -59,17 +59,17 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label styleClass="primary-label" text="First Name" />
-                              <Label styleClass="primary-label" text="Last Name" GridPane.rowIndex="1" />
-                              <Label styleClass="primary-label" text="Street" GridPane.rowIndex="2" />
-                              <Label styleClass="primary-label" text="City" GridPane.rowIndex="3" />
-                              <Label styleClass="primary-label" text="Postcode" GridPane.rowIndex="4" />
+                              <Label styleClass="ikon-label-strong" text="First Name" />
+                              <Label styleClass="ikon-label-strong" text="Last Name" GridPane.rowIndex="1" />
+                              <Label styleClass="ikon-label-strong" text="Street" GridPane.rowIndex="2" />
+                              <Label styleClass="ikon-label-strong" text="City" GridPane.rowIndex="3" />
+                              <Label styleClass="ikon-label-strong" text="Postcode" GridPane.rowIndex="4" />
                               <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" />
                               <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label fx:id="cityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Label fx:id="postalCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label styleClass="primary-label" text="Birthday" GridPane.rowIndex="5" />
+                              <Label styleClass="ikon-label-strong" text="Birthday" GridPane.rowIndex="5" />
                               <Label fx:id="birthdayLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                            </children>
                            <padding>
@@ -82,8 +82,8 @@
                <bottom>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <buttons>
-                        <Button mnemonicParsing="false" text="New..." />
-                        <Button mnemonicParsing="false" text="Edit..." />
+                        <Button mnemonicParsing="false" onAction="#handleNewPerson" text="New..." />
+                        <Button mnemonicParsing="false" onAction="#handleEditPerson" text="Edit..." />
                       <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
                     </buttons>
                      <BorderPane.margin>
